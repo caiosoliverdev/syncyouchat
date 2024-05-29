@@ -34,14 +34,14 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { getContrastingTextColor } from '@chatwoot/utils';
+import { getContrastingTextColor } from '@SyncYou/utils';
 import nextAvailabilityTime from 'widget/mixins/nextAvailabilityTime';
 import AvailableAgents from 'widget/components/AvailableAgents.vue';
 import configMixin from 'widget/mixins/configMixin';
 import availabilityMixin from 'widget/mixins/availability';
 import FluentIcon from 'shared/components/FluentIcon/Index.vue';
 import { IFrameHelper } from 'widget/helpers/utils';
-import { CHATWOOT_ON_START_CONVERSATION } from '../constants/sdkEvents';
+import { SyncYou_ON_START_CONVERSATION } from '../constants/sdkEvents';
 
 export default {
   name: 'TeamAvailability',
@@ -88,7 +88,7 @@ export default {
       if (!this.hasConversation) {
         IFrameHelper.sendMessage({
           event: 'onEvent',
-          eventIdentifier: CHATWOOT_ON_START_CONVERSATION,
+          eventIdentifier: SyncYou_ON_START_CONVERSATION,
           data: { hasConversation: false },
         });
       }

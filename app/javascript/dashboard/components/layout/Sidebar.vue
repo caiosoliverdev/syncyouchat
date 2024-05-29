@@ -21,7 +21,7 @@
       :custom-views="customViews"
       :menu-config="activeSecondaryMenu"
       :current-role="currentRole"
-      :is-on-chatwoot-cloud="isOnChatwootCloud"
+      :is-on-SyncYou-cloud="isOnSyncYouCloud"
       @add-label="showAddLabelPopup"
       @toggle-accounts="toggleAccountModal"
     />
@@ -70,7 +70,7 @@ export default {
       inboxes: 'inboxes/getInboxes',
       isACustomBrandedInstance: 'globalConfig/isACustomBrandedInstance',
       isFeatureEnabledonAccount: 'accounts/isFeatureEnabledonAccount',
-      isOnChatwootCloud: 'globalConfig/isOnChatwootCloud',
+      isOnSyncYouCloud: 'globalConfig/isOnSyncYouCloud',
       labels: 'labels/getLabelsOnSidebar',
       teams: 'teams/getMyTeams',
     }),
@@ -106,7 +106,7 @@ export default {
           return false;
         }
         if (
-          menuItem.alwaysVisibleOnChatwootInstances &&
+          menuItem.alwaysVisibleOnSyncYouInstances &&
           !this.isACustomBrandedInstance
         ) {
           return true;
@@ -192,7 +192,7 @@ export default {
       return this.$route.name === routeName;
     },
     toggleSupportChatWindow() {
-      window.$chatwoot.toggle();
+      window.$SyncYou.toggle();
     },
     toggleAccountModal() {
       this.$emit('toggle-account-modal');

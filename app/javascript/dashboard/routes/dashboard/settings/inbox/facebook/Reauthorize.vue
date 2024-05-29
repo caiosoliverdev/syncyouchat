@@ -38,9 +38,9 @@ export default {
       if (window.fbSDKLoaded === undefined) {
         window.fbAsyncInit = () => {
           FB.init({
-            appId: window.chatwootConfig.fbAppId,
+            appId: window.SyncYouConfig.fbAppId,
             xfbml: true,
-            version: window.chatwootConfig.fbApiVersion,
+            version: window.SyncYouConfig.fbApiVersion,
             status: true,
           });
           window.fbSDKLoaded = true;

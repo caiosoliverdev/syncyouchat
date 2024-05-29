@@ -80,7 +80,7 @@
           size="16px"
         >
           <avatar class="user-thumbnail thumbnail-rounded">
-            <fluent-icon class="chatwoot-ai-icon" icon="chatwoot-ai" />
+            <fluent-icon class="SyncYou-ai-icon" icon="SyncYou-ai" />
           </avatar>
         </woot-thumbnail>
       </div>
@@ -257,7 +257,7 @@ export default {
     }
   }
 
-  .chatwoot-ai-icon {
+  .SyncYou-ai-icon {
     height: var(--font-size-mini);
     width: var(--font-size-mini);
   }

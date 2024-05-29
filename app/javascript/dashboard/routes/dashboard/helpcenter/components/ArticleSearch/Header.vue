@@ -37,12 +37,12 @@
 import keyboardEventListenerMixins from 'shared/mixins/keyboardEventListenerMixins';
 
 export default {
-  name: 'ChatwootSearch',
+  name: 'SyncYouSearch',
   mixins: [keyboardEventListenerMixins],
   props: {
     title: {
       type: String,
-      default: 'Chatwoot',
+      default: 'SyncYou',
     },
   },
   data() {

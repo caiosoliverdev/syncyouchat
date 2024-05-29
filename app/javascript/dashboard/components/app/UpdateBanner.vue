@@ -3,7 +3,7 @@
     v-if="shouldShowBanner"
     color-scheme="primary"
     :banner-message="bannerMessage"
-    href-link="https://github.com/chatwoot/chatwoot/releases"
+    href-link="https://github.com/SyncYou/SyncYou/releases"
     :href-link-text="$t('GENERAL_SETTINGS.LEARN_MORE')"
     has-close-button
     @close="dismissUpdateBanner"
@@ -21,7 +21,7 @@ export default {
   components: { Banner },
   mixins: [adminMixin],
   props: {
-    latestChatwootVersion: { type: String, default: '' },
+    latestSyncYouVersion: { type: String, default: '' },
   },
   data() {
     return { userDismissedBanner: false };
@@ -30,13 +30,13 @@ export default {
     ...mapGetters({ globalConfig: 'globalConfig/get' }),
     updateAvailable() {
       return hasAnUpdateAvailable(
-        this.latestChatwootVersion,
+        this.latestSyncYouVersion,
         this.globalConfig.appVersion
       );
     },
     bannerMessage() {
-      return this.$t('GENERAL_SETTINGS.UPDATE_CHATWOOT', {
-        latestChatwootVersion: this.latestChatwootVersion,
+      return this.$t('GENERAL_SETTINGS.UPDATE_SyncYou', {
+        latestSyncYouVersion: this.latestSyncYouVersion,
       });
     },
     shouldShowBanner() {
@@ -44,7 +44,7 @@ export default {
         !this.userDismissedBanner &&
         this.globalConfig.displayManifest &&
         this.updateAvailable &&
-        !this.isVersionNotificationDismissed(this.latestChatwootVersion) &&
+        !this.isVersionNotificationDismissed(this.latestSyncYouVersion) &&
         this.isAdmin
       );
     },
@@ -59,9 +59,9 @@ export default {
       let updatedDismissedItems =
         LocalStorage.get(LOCAL_STORAGE_KEYS.DISMISSED_UPDATES) || [];
       if (updatedDismissedItems instanceof Array) {
-        updatedDismissedItems.push(this.latestChatwootVersion);
+        updatedDismissedItems.push(this.latestSyncYouVersion);
       } else {
-        updatedDismissedItems = [this.latestChatwootVersion];
+        updatedDismissedItems = [this.latestSyncYouVersion];
       }
       LocalStorage.set(
         LOCAL_STORAGE_KEYS.DISMISSED_UPDATES,

@@ -2,7 +2,7 @@ import {
   messageSchema,
   MessageMarkdownTransformer,
   MessageMarkdownSerializer,
-} from '@chatwoot/prosemirror-schema';
+} from '@SyncYou/prosemirror-schema';
 import * as Sentry from '@sentry/browser';
 
 /**

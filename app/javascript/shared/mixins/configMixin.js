@@ -1,20 +1,20 @@
 export default {
   computed: {
     hostURL() {
-      return window.chatwootConfig.hostURL;
+      return window.SyncYouConfig.hostURL;
     },
     vapidPublicKey() {
-      return window.chatwootConfig.vapidPublicKey;
+      return window.SyncYouConfig.vapidPublicKey;
     },
     enabledLanguages() {
-      return window.chatwootConfig.enabledLanguages;
+      return window.SyncYouConfig.enabledLanguages;
     },
     isEnterprise() {
-      return window.chatwootConfig.isEnterprise === 'true';
+      return window.SyncYouConfig.isEnterprise === 'true';
     },
     enterprisePlanName() {
       // returns "community" or "enterprise"
-      return window.chatwootConfig?.enterprisePlanName;
+      return window.SyncYouConfig?.enterprisePlanName;
     },
   },
 };

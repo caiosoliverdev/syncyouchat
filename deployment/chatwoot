@@ -1,6 +1,6 @@
-# give chatwoot user permission to start/stop/restart chatwoot systemd service
+# give SyncYou user permission to start/stop/restart SyncYou systemd service
 
-%chatwoot ALL=NOPASSWD: /bin/systemctl start chatwoot.target
-%chatwoot ALL=NOPASSWD: /bin/systemctl stop chatwoot.target
-%chatwoot ALL=NOPASSWD: /bin/systemctl restart chatwoot.target
-%chatwoot ALL=NOPASSWD: /usr/local/bin/cwctl
+%SyncYou ALL=NOPASSWD: /bin/systemctl start SyncYou.target
+%SyncYou ALL=NOPASSWD: /bin/systemctl stop SyncYou.target
+%SyncYou ALL=NOPASSWD: /bin/systemctl restart SyncYou.target
+%SyncYou ALL=NOPASSWD: /usr/local/bin/cwctl

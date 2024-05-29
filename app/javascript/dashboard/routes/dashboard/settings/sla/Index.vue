@@ -13,7 +13,7 @@
       <SLAPaywallEnterprise
         v-if="isBehindAPaywall"
         :is-super-admin="isSuperAdmin"
-        :is-on-chatwoot-cloud="isOnChatwootCloud"
+        :is-on-SyncYou-cloud="isOnSyncYouCloud"
         @click="onClickCTA"
       />
       <SLAEmptyState
@@ -62,7 +62,7 @@ import SLAListItemLoading from './components/SLAListItemLoading.vue';
 import SLAPaywallEnterprise from './components/SLAPaywallEnterprise.vue';
 
 import { mapGetters } from 'vuex';
-import { convertSecondsToTimeUnit } from '@chatwoot/utils';
+import { convertSecondsToTimeUnit } from '@SyncYou/utils';
 import alertMixin from 'shared/mixins/alertMixin';
 import configMixin from 'shared/mixins/configMixin';
 
@@ -88,7 +88,7 @@ export default {
   computed: {
     ...mapGetters({
       globalConfig: 'globalConfig/get',
-      isOnChatwootCloud: 'globalConfig/isOnChatwootCloud',
+      isOnSyncYouCloud: 'globalConfig/isOnSyncYouCloud',
       isFeatureEnabledonAccount: 'accounts/isFeatureEnabledonAccount',
       records: 'sla/getSLA',
       currentUser: 'getCurrentUser',

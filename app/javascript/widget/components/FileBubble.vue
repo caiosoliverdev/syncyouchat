@@ -25,7 +25,7 @@
 <script>
 import FluentIcon from 'shared/components/FluentIcon/Index.vue';
 import darkModeMixin from 'widget/mixins/darkModeMixin.js';
-import { getContrastingTextColor } from '@chatwoot/utils';
+import { getContrastingTextColor } from '@SyncYou/utils';
 
 export default {
   components: {

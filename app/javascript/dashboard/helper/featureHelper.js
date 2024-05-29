@@ -1,4 +1,4 @@
 export function getHelpUrlForFeature(featureName) {
-  const { helpUrls } = window.chatwootConfig;
+  const { helpUrls } = window.SyncYouConfig;
   return helpUrls[featureName];
 }

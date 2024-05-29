@@ -17,9 +17,9 @@
               })
             }}
           </p>
-          <p v-if="globalConfig.installationName === 'Chatwoot'">
+          <p v-if="globalConfig.installationName === 'SyncYou'">
             <a
-              href="https://www.chatwoot.com/changelog"
+              href="https://www.SyncYou.com/changelog"
               target="_blank"
               rel="noopener nofollow noreferrer"
               class="onboarding--link"

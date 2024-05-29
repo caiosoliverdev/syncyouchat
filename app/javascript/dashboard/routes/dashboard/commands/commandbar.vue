@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import '@chatwoot/ninja-keys';
+import '@SyncYou/ninja-keys';
 import wootConstants from 'dashboard/constants/globals';
 import conversationHotKeysMixin from './conversationHotKeys';
 import bulkActionsHotKeysMixin from './bulkActionsHotKeys';

@@ -142,9 +142,9 @@ export default {
     ...mapGetters({ globalConfig: 'globalConfig/get' }),
     termsLink() {
       return this.$t('REGISTER.TERMS_ACCEPT')
-        .replace('https://www.chatwoot.com/terms', this.globalConfig.termsURL)
+        .replace('https://www.SyncYou.com/terms', this.globalConfig.termsURL)
         .replace(
-          'https://www.chatwoot.com/privacy-policy',
+          'https://www.SyncYou.com/privacy-policy',
           this.globalConfig.privacyURL
         );
     },
@@ -168,7 +168,7 @@ export default {
       return '';
     },
     showGoogleOAuth() {
-      return Boolean(window.chatwootConfig.googleOAuthClientId);
+      return Boolean(window.SyncYouConfig.googleOAuthClientId);
     },
   },
   methods: {

@@ -4,8 +4,8 @@ import Cookies from 'js-cookie';
 import {
   ANALYTICS_IDENTITY,
   ANALYTICS_RESET,
-  CHATWOOT_RESET,
-  CHATWOOT_SET_USER,
+  SyncYou_RESET,
+  SyncYou_SET_USER,
 } from '../../helper/scriptHelpers';
 import { LOCAL_STORAGE_KEYS } from 'dashboard/constants/localStorage';
 import { LocalStorage } from 'shared/helpers/localStorage';
@@ -18,7 +18,7 @@ export const setLoadingStatus = (state, status) => {
 };
 
 export const setUser = user => {
-  window.bus.$emit(CHATWOOT_SET_USER, { user });
+  window.bus.$emit(SyncYou_SET_USER, { user });
   window.bus.$emit(ANALYTICS_IDENTITY, { user });
 };
 
@@ -70,7 +70,7 @@ export const deleteIndexedDBOnLogout = async () => {
 };
 
 export const clearCookiesOnLogout = () => {
-  window.bus.$emit(CHATWOOT_RESET);
+  window.bus.$emit(SyncYou_RESET);
   window.bus.$emit(ANALYTICS_RESET);
   clearBrowserSessionCookies();
   clearLocalStorageOnLogout();

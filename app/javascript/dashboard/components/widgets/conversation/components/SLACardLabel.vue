@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { evaluateSLAStatus } from '@chatwoot/utils';
+import { evaluateSLAStatus } from '@SyncYou/utils';
 import SLAPopoverCard from './SLAPopoverCard.vue';
 
 const REFRESH_INTERVAL = 60000;

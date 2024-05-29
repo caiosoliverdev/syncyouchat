@@ -10,7 +10,7 @@ class EmailReplyWorker
     # send the email
     ConversationReplyMailer.with(account: message.account).email_reply(message).deliver_now
   rescue StandardError => e
-    ChatwootExceptionTracker.new(e, account: message.account).capture_exception
+    SyncYouExceptionTracker.new(e, account: message.account).capture_exception
     message.update!(status: :failed, external_error: e.message)
   end
 end

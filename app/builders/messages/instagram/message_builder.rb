@@ -1,7 +1,7 @@
-# This class creates both outgoing messages from chatwoot and echo outgoing messages based on the flag `outgoing_echo`
+# This class creates both outgoing messages from SyncYou and echo outgoing messages based on the flag `outgoing_echo`
 # Assumptions
 # 1. Incase of an outgoing message which is echo, source_id will NOT be nil,
-#    based on this we are showing "not sent from chatwoot" message in frontend
+#    based on this we are showing "not sent from SyncYou" message in frontend
 #    Hence there is no need to set user_id in message for outgoing echo messages.
 
 class Messages::Instagram::MessageBuilder < Messages::Messenger::MessageBuilder
@@ -26,7 +26,7 @@ class Messages::Instagram::MessageBuilder < Messages::Messenger::MessageBuilder
     @inbox.channel.authorization_error!
     raise
   rescue StandardError => e
-    ChatwootExceptionTracker.new(e, account: @inbox.account).capture_exception
+    SyncYouExceptionTracker.new(e, account: @inbox.account).capture_exception
     true
   end
 
@@ -106,7 +106,7 @@ class Messages::Instagram::MessageBuilder < Messages::Messenger::MessageBuilder
   end
 
   def build_message
-    return if @outgoing_echo && already_sent_from_chatwoot?
+    return if @outgoing_echo && already_sent_from_SyncYou?
     return if message_content.blank? && all_unsupported_files?
 
     @message = conversation.messages.create!(message_params)
@@ -157,7 +157,7 @@ class Messages::Instagram::MessageBuilder < Messages::Messenger::MessageBuilder
     params
   end
 
-  def already_sent_from_chatwoot?
+  def already_sent_from_SyncYou?
     cw_message = conversation.messages.where(
       source_id: @messaging[:message][:mid]
     ).first

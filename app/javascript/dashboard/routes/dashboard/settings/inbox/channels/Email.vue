@@ -42,7 +42,7 @@ export default {
   computed: {
     ...mapGetters({
       globalConfig: 'globalConfig/get',
-      isAChatwootInstance: 'globalConfig/isAChatwootInstance',
+      isASyncYouInstance: 'globalConfig/isASyncYouInstance',
     }),
     emailProviderList() {
       return [
@@ -59,7 +59,7 @@ export default {
           src: '/assets/images/dashboard/channels/email.png',
         },
       ].filter(provider => {
-        if (this.isAChatwootInstance) {
+        if (this.isASyncYouInstance) {
           return true;
         }
         return provider.isEnabled;

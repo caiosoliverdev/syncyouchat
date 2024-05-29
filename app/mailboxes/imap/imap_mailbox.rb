@@ -9,10 +9,10 @@ class Imap::ImapMailbox
     load_inbox
     decorate_mail
 
-    # prevent loop from chatwoot notification emails
-    return if notification_email_from_chatwoot?
+    # prevent loop from SyncYou notification emails
+    return if notification_email_from_SyncYou?
 
-    # Stop processing if email format doesn't match Chatwoot supported mail format
+    # Stop processing if email format doesn't match SyncYou supported mail format
     return unless email_from_valid_email?
 
     ActiveRecord::Base.transaction do

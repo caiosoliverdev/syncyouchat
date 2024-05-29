@@ -34,7 +34,7 @@
 import { GROUP_BY_FILTER, METRIC_CHART } from './constants';
 import fromUnixTime from 'date-fns/fromUnixTime';
 import format from 'date-fns/format';
-import { formatTime } from '@chatwoot/utils';
+import { formatTime } from '@SyncYou/utils';
 import reportMixin from 'dashboard/mixins/reportMixin';
 import ChartStats from './components/ChartElements/ChartStats.vue';
 

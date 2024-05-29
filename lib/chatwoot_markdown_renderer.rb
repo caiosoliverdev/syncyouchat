@@ -1,4 +1,4 @@
-class ChatwootMarkdownRenderer
+class SyncYouMarkdownRenderer
   def initialize(content)
     @content = content
   end

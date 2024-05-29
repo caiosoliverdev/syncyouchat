@@ -337,7 +337,7 @@ Rails.application.routes.draw do
     end
   end
 
-  if ChatwootApp.enterprise?
+  if SyncYouApp.enterprise?
     namespace :enterprise, defaults: { format: 'json' } do
       namespace :api do
         namespace :v1 do

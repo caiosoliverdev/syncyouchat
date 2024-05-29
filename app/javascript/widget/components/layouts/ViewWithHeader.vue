@@ -59,7 +59,7 @@ export default {
       showPopoutButton: false,
       scrollPosition: 0,
       ticking: true,
-      disableBranding: window.chatwootWebChannel.disableBranding || false,
+      disableBranding: window.SyncYouWebChannel.disableBranding || false,
       requestID: null,
     };
   },
@@ -70,7 +70,7 @@ export default {
       widgetColor: 'appConfig/getWidgetColor',
     }),
     portal() {
-      return window.chatwootWebChannel.portal;
+      return window.SyncYouWebChannel.portal;
     },
     isHeaderCollapsed() {
       if (!this.hasIntroText) {

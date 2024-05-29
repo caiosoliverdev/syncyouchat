@@ -94,7 +94,7 @@ RSpec.describe Enterprise::MessageTemplates::ResponseBotService, type: :service 
         allow(chat_gpt_double).to receive(:generate_response).and_raise(StandardError)
         expect(conversation).to receive(:bot_handoff!).and_call_original
 
-        expect(ChatwootExceptionTracker).to receive(:new).and_call_original
+        expect(SyncYouExceptionTracker).to receive(:new).and_call_original
 
         expect do
           service.perform

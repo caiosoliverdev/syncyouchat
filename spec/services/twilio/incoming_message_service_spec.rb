@@ -172,7 +172,7 @@ describe Twilio::IncomingMessageService do
 
     context 'when a message with an attachment is received' do
       before do
-        stub_request(:get, 'https://chatwoot-assets.local/sample.png')
+        stub_request(:get, 'https://SyncYou-assets.local/sample.png')
           .to_return(status: 200, body: 'image data', headers: {})
       end
 
@@ -185,7 +185,7 @@ describe Twilio::IncomingMessageService do
           Body: 'testing3',
           NumMedia: '1',
           MediaContentType0: 'image/jpeg',
-          MediaUrl0: 'https://chatwoot-assets.local/sample.png'
+          MediaUrl0: 'https://SyncYou-assets.local/sample.png'
         }
       end
 
@@ -199,10 +199,10 @@ describe Twilio::IncomingMessageService do
 
     context 'when there is an error downloading the attachment' do
       before do
-        stub_request(:get, 'https://chatwoot-assets.local/sample.png')
+        stub_request(:get, 'https://SyncYou-assets.local/sample.png')
           .to_raise(Down::Error.new('Download error'))
 
-        stub_request(:get, 'https://chatwoot-assets.local/sample.png')
+        stub_request(:get, 'https://SyncYou-assets.local/sample.png')
           .to_return(status: 200, body: 'image data', headers: {})
       end
 
@@ -215,7 +215,7 @@ describe Twilio::IncomingMessageService do
           Body: 'testing3',
           NumMedia: '1',
           MediaContentType0: 'image/jpeg',
-          MediaUrl0: 'https://chatwoot-assets.local/sample.png'
+          MediaUrl0: 'https://SyncYou-assets.local/sample.png'
         }
       end
 

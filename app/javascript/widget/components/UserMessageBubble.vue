@@ -8,7 +8,7 @@
 
 <script>
 import messageFormatterMixin from 'shared/mixins/messageFormatterMixin';
-import { getContrastingTextColor } from '@chatwoot/utils';
+import { getContrastingTextColor } from '@SyncYou/utils';
 
 export default {
   name: 'UserMessageBubble',

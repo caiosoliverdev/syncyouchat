@@ -3,7 +3,7 @@ import nextAvailabilityTimeMixin from '../nextAvailabilityTime';
 import Vue from 'vue';
 
 describe('nextAvailabilityTimeMixin', () => {
-  const chatwootWebChannel = {
+  const SyncYouWebChannel = {
     workingHoursEnabled: true,
     workingHours: [
       {
@@ -59,11 +59,11 @@ describe('nextAvailabilityTimeMixin', () => {
   };
 
   beforeAll(() => {
-    window.chatwootWebChannel = chatwootWebChannel;
+    window.SyncYouWebChannel = SyncYouWebChannel;
   });
 
   afterAll(() => {
-    delete window.chatwootWebChannel;
+    delete window.SyncYouWebChannel;
   });
 
   beforeEach(() => {
@@ -106,7 +106,7 @@ describe('nextAvailabilityTimeMixin', () => {
     const Constructor = Vue.extend(Component);
     const vm = new Constructor().$mount();
     const wrapper = createWrapper(vm);
-    expect(wrapper.vm.channelConfig).toEqual(chatwootWebChannel);
+    expect(wrapper.vm.channelConfig).toEqual(SyncYouWebChannel);
   });
 
   it('should return workingHours', () => {
@@ -117,7 +117,7 @@ describe('nextAvailabilityTimeMixin', () => {
     const Constructor = Vue.extend(Component);
     const vm = new Constructor().$mount();
     const wrapper = createWrapper(vm);
-    expect(wrapper.vm.workingHours).toEqual(chatwootWebChannel.workingHours);
+    expect(wrapper.vm.workingHours).toEqual(SyncYouWebChannel.workingHours);
   });
 
   it('should return currentDayWorkingHours', () => {
@@ -126,7 +126,7 @@ describe('nextAvailabilityTimeMixin', () => {
       mixins: [nextAvailabilityTimeMixin],
     };
     const currentDay = new Date().getDay();
-    const expectedWorkingHours = chatwootWebChannel.workingHours.find(
+    const expectedWorkingHours = SyncYouWebChannel.workingHours.find(
       slot => slot.day_of_week === currentDay
     );
     const Constructor = Vue.extend(Component);
@@ -151,7 +151,7 @@ describe('nextAvailabilityTimeMixin', () => {
     };
     const currentDay = new Date().getDay();
     const nextDay = currentDay === 6 ? 0 : currentDay + 1;
-    const expectedWorkingHours = chatwootWebChannel.workingHours.find(
+    const expectedWorkingHours = SyncYouWebChannel.workingHours.find(
       slot => slot.day_of_week === nextDay
     );
     const Constructor = Vue.extend(Component);
@@ -348,13 +348,13 @@ describe('nextAvailabilityTimeMixin', () => {
       'Saturday',
     ];
     const currentDayCloseHour =
-      chatwootWebChannel.workingHours[wrapper.vm.currentDay].close_hour;
+      SyncYouWebChannel.workingHours[wrapper.vm.currentDay].close_hour;
     const nextDayOpenHour =
-      chatwootWebChannel.workingHours[
+      SyncYouWebChannel.workingHours[
         wrapper.vm.currentDay === 6 ? 0 : wrapper.vm.currentDay + 1
       ].open_hour;
     const nextDayOpenMinute =
-      chatwootWebChannel.workingHours[
+      SyncYouWebChannel.workingHours[
         wrapper.vm.currentDay === 6 ? 0 : wrapper.vm.currentDay + 1
       ].open_minutes;
     const expectedHoursAndMinutes =
@@ -407,9 +407,9 @@ describe('nextAvailabilityTimeMixin', () => {
       'Saturday',
     ];
 
-    chatwootWebChannel.workingHours[4].open_hour = 18;
-    chatwootWebChannel.workingHours[4].open_minutes = 0;
-    chatwootWebChannel.workingHours[4].close_hour = 23;
+    SyncYouWebChannel.workingHours[4].open_hour = 18;
+    SyncYouWebChannel.workingHours[4].open_minutes = 0;
+    SyncYouWebChannel.workingHours[4].close_hour = 23;
     expect(wrapper.vm.timeLeftToBackInOnline).toBe('in 30 minutes');
   });
 
@@ -440,7 +440,7 @@ describe('nextAvailabilityTimeMixin', () => {
       'Friday',
       'Saturday',
     ];
-    chatwootWebChannel.workingHours[4].open_hour = 19;
+    SyncYouWebChannel.workingHours[4].open_hour = 19;
     expect(wrapper.vm.timeLeftToBackInOnline).toBe('in 2 hours');
   });
 
@@ -471,7 +471,7 @@ describe('nextAvailabilityTimeMixin', () => {
       'Friday',
       'Saturday',
     ];
-    chatwootWebChannel.workingHours[4].open_hour = 10;
+    SyncYouWebChannel.workingHours[4].open_hour = 10;
     expect(wrapper.vm.timeLeftToBackInOnline).toBe('at 10:00 AM');
   });
 
@@ -502,8 +502,8 @@ describe('nextAvailabilityTimeMixin', () => {
       'Friday',
       'Saturday',
     ];
-    chatwootWebChannel.workingHours[4].open_hour = 9;
-    chatwootWebChannel.workingHours[4].close_hour = 16;
+    SyncYouWebChannel.workingHours[4].open_hour = 9;
+    SyncYouWebChannel.workingHours[4].close_hour = 16;
     expect(wrapper.vm.timeLeftToBackInOnline).toBe('tomorrow');
   });
 
@@ -535,9 +535,9 @@ describe('nextAvailabilityTimeMixin', () => {
       'Saturday',
     ];
 
-    chatwootWebChannel.workingHours[4].open_hour = 9;
-    chatwootWebChannel.workingHours[4].close_hour = 16;
-    chatwootWebChannel.workingHours[5].closed_all_day = true;
+    SyncYouWebChannel.workingHours[4].open_hour = 9;
+    SyncYouWebChannel.workingHours[4].close_hour = 16;
+    SyncYouWebChannel.workingHours[5].closed_all_day = true;
     expect(wrapper.vm.timeLeftToBackInOnline).toBe('on Saturday');
   });
 });

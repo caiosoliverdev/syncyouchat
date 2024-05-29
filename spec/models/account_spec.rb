@@ -42,8 +42,8 @@ RSpec.describe Account do
   describe 'usage_limits' do
     let(:account) { create(:account) }
 
-    it 'returns ChatwootApp.max limits' do
-      expect(account.usage_limits).to eq({ agents: ChatwootApp.max_limit, inboxes: ChatwootApp.max_limit })
+    it 'returns SyncYouApp.max limits' do
+      expect(account.usage_limits).to eq({ agents: SyncYouApp.max_limit, inboxes: SyncYouApp.max_limit })
     end
   end
 
@@ -76,23 +76,23 @@ RSpec.describe Account do
     let(:account) { create(:account) }
 
     it 'returns the support email from inbox if inbox value is present' do
-      account.update(support_email: 'support@chatwoot.com')
-      with_modified_env MAILER_SENDER_EMAIL: 'hello@chatwoot.com' do
-        expect(account.support_email).to eq('support@chatwoot.com')
+      account.update(support_email: 'support@SyncYou.com')
+      with_modified_env MAILER_SENDER_EMAIL: 'hello@SyncYou.com' do
+        expect(account.support_email).to eq('support@SyncYou.com')
       end
     end
 
     it 'returns the support email from ENV if inbox value is nil' do
       account.update(support_email: nil)
-      with_modified_env MAILER_SENDER_EMAIL: 'hello@chatwoot.com' do
-        expect(account.support_email).to eq('hello@chatwoot.com')
+      with_modified_env MAILER_SENDER_EMAIL: 'hello@SyncYou.com' do
+        expect(account.support_email).to eq('hello@SyncYou.com')
       end
     end
 
     it 'returns the support email from ENV if inbox value is empty string' do
       account.update(support_email: '')
-      with_modified_env MAILER_SENDER_EMAIL: 'hello@chatwoot.com' do
-        expect(account.support_email).to eq('hello@chatwoot.com')
+      with_modified_env MAILER_SENDER_EMAIL: 'hello@SyncYou.com' do
+        expect(account.support_email).to eq('hello@SyncYou.com')
       end
     end
   end

@@ -21,7 +21,7 @@ by providing a `content_for(:javascript)` block.
 <% end %>
 
 <script>
-window.chatwootSettings = {
+window.SyncYouSettings = {
   hideMessageBubble: true,
 };
 
@@ -33,16 +33,16 @@ window.chatwootSettings = {
   g.async = true;
   s.parentNode.insertBefore(g,s);
   g.onload=function(){
-    window.chatwootSDK.run({
-      websiteToken: '<%= ChatwootHub.support_config[:support_website_token] %>',
-      baseUrl: '<%= ChatwootHub.support_config[:support_script_url] %>'
+    window.SyncYouSDK.run({
+      websiteToken: '<%= SyncYouHub.support_config[:support_website_token] %>',
+      baseUrl: '<%= SyncYouHub.support_config[:support_script_url] %>'
     })
   }
 })(document,"script");
 
-window.addEventListener('chatwoot:ready', function() {
-  window.$chatwoot.setUser('<%= ChatwootHub.installation_identifier %>', {
-    identifier_hash: '<%= ChatwootHub.support_config[:support_identifier_hash] %>',
+window.addEventListener('SyncYou:ready', function() {
+  window.$SyncYou.setUser('<%= SyncYouHub.installation_identifier %>', {
+    identifier_hash: '<%= SyncYouHub.support_config[:support_identifier_hash] %>',
     email: '<%= SuperAdmin.first.email %>',
     name: '<%= SuperAdmin.first.name %>'
   });

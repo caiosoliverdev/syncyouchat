@@ -11,7 +11,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -38,7 +38,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -65,7 +65,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -73,8 +73,8 @@ FactoryBot.define do
                 'text': 'This is the story reply',
                 'reply_to': {
                   'story': {
-                    'id': 'chatwoot-app-user-id-1',
-                    'url': 'https://chatwoot-assets.local/sample.png'
+                    'id': 'SyncYou-app-user-id-1',
+                    'url': 'https://SyncYou-assets.local/sample.png'
                   }
                 }
               }
@@ -98,7 +98,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -155,7 +155,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -182,7 +182,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -216,7 +216,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -250,7 +250,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -285,7 +285,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'message': {
@@ -312,7 +312,7 @@ FactoryBot.define do
                 'id': 'Sender-id-1'
               },
               'recipient': {
-                'id': 'chatwoot-app-user-id-1'
+                'id': 'SyncYou-app-user-id-1'
               },
               'timestamp': '2021-09-08T06:34:04+0000',
               'read': {

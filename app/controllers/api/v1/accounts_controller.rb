@@ -17,7 +17,7 @@ class Api::V1::AccountsController < Api::BaseController
               with: :render_error_response
 
   def show
-    @latest_chatwoot_version = ::Redis::Alfred.get(::Redis::Alfred::LATEST_CHATWOOT_VERSION)
+    @latest_SyncYou_version = ::Redis::Alfred.get(::Redis::Alfred::LATEST_SyncYou_VERSION)
     render 'api/v1/accounts/show', format: :json
   end
 
@@ -95,7 +95,7 @@ class Api::V1::AccountsController < Api::BaseController
   end
 
   def validate_captcha
-    raise ActionController::InvalidAuthenticityToken, 'Invalid Captcha' unless ChatwootCaptcha.new(params[:h_captcha_client_response]).valid?
+    raise ActionController::InvalidAuthenticityToken, 'Invalid Captcha' unless SyncYouCaptcha.new(params[:h_captcha_client_response]).valid?
   end
 
   def pundit_user

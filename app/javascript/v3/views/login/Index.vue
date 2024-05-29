@@ -95,7 +95,7 @@ import { required, email } from 'vuelidate/lib/validators';
 import globalConfigMixin from 'shared/mixins/globalConfigMixin';
 import SubmitButton from '../../components/Button/SubmitButton.vue';
 import { mapGetters } from 'vuex';
-import { parseBoolean } from '@chatwoot/utils';
+import { parseBoolean } from '@SyncYou/utils';
 import GoogleOAuthButton from '../../components/GoogleOauth/Button.vue';
 import FormInput from '../../components/Form/Input.vue';
 import { login } from '../../api/auth';
@@ -151,10 +151,10 @@ export default {
   computed: {
     ...mapGetters({ globalConfig: 'globalConfig/get' }),
     showGoogleOAuth() {
-      return Boolean(window.chatwootConfig.googleOAuthClientId);
+      return Boolean(window.SyncYouConfig.googleOAuthClientId);
     },
     showSignupLink() {
-      return parseBoolean(window.chatwootConfig.signupEnabled);
+      return parseBoolean(window.SyncYouConfig.signupEnabled);
     },
   },
   created() {

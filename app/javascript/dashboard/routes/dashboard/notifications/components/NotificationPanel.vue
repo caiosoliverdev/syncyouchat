@@ -232,7 +232,7 @@ export default {
           'profile-settings-notifications'
         );
         if (audioSettings) {
-          // TODO [ref](https://github.com/chatwoot/chatwoot/pull/6233#discussion_r1069636890)
+          // TODO [ref](https://github.com/SyncYou/SyncYou/pull/6233#discussion_r1069636890)
           audioSettings.scrollIntoView(
             { behavior: 'smooth', block: 'start' },
             150

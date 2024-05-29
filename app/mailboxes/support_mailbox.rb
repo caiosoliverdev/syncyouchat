@@ -11,8 +11,8 @@ class SupportMailbox < ApplicationMailbox
 
     # to turn off spam conversation creation
     return unless @account.active?
-    # prevent loop from chatwoot notification emails
-    return if notification_email_from_chatwoot?
+    # prevent loop from SyncYou notification emails
+    return if notification_email_from_SyncYou?
 
     # return if email doesn't have a valid sender
     # This can happen in cases like bounce emails for invalid contact email address

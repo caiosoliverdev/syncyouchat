@@ -183,7 +183,7 @@ describe Whatsapp::IncomingMessageService do
       end
     end
 
-    # ref: https://github.com/chatwoot/chatwoot/issues/3795#issuecomment-1018057318
+    # ref: https://github.com/SyncYou/SyncYou/issues/3795#issuecomment-1018057318
     context 'when valid template button message params' do
       it 'creates appropriate conversations, message and contacts' do
         params = {
@@ -262,7 +262,7 @@ describe Whatsapp::IncomingMessageService do
                                         'name' => { 'formatted_name' => 'Apple Inc.' },
                                         'phones' => [{ 'phone' => '+911800', 'type' => 'MAIN' }]
                                       },
-                                      { 'name' => { 'first_name' => 'Chatwoot', 'formatted_name' => 'Chatwoot' },
+                                      { 'name' => { 'first_name' => 'SyncYou', 'formatted_name' => 'SyncYou' },
                                         'phones' => [{ 'phone' => '+1 (415) 341-8386' }] }
                                     ] }] }.with_indifferent_access
         described_class.new(inbox: whatsapp_channel.inbox, params: params).perform
@@ -278,12 +278,12 @@ describe Whatsapp::IncomingMessageService do
 
         m2 = whatsapp_channel.inbox.messages.last
         contact_attachments = m2.attachments.first
-        expect(m2.content).to eq('Chatwoot')
+        expect(m2.content).to eq('SyncYou')
         expect(contact_attachments.fallback_title).to eq('+1 (415) 341-8386')
       end
     end
 
-    # ref: https://github.com/chatwoot/chatwoot/issues/5840
+    # ref: https://github.com/SyncYou/SyncYou/issues/5840
     describe 'When the incoming waid is a brazilian number in new format with 9 included' do
       let(:wa_id) { '5541988887777' }
 
@@ -356,7 +356,7 @@ describe Whatsapp::IncomingMessageService do
                                         'name' => { 'formatted_name' => 'Apple Inc.' },
                                         'phones' => [{ 'phone' => '+911800', 'type' => 'MAIN' }]
                                       },
-                                      { 'name' => { 'first_name' => 'Chatwoot', 'formatted_name' => 'Chatwoot' },
+                                      { 'name' => { 'first_name' => 'SyncYou', 'formatted_name' => 'SyncYou' },
                                         'phones' => [{ 'phone' => '+1 (415) 341-8386' }] }
                                     ] }] }.with_indifferent_access
 

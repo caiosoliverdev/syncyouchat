@@ -48,7 +48,7 @@ gem 'csv-safe'
 gem 'aws-sdk-s3', require: false
 # original gem isn't maintained actively
 # we wanted updated version of faraday which is a dependency for slack-ruby-client
-gem 'azure-storage-blob', git: 'https://github.com/chatwoot/azure-storage-ruby', branch: 'chatwoot', require: false
+gem 'azure-storage-blob', git: 'https://github.com/SyncYou/azure-storage-ruby', branch: 'SyncYou', require: false
 gem 'google-cloud-storage', require: false
 gem 'image_processing'
 
@@ -70,7 +70,7 @@ gem 'barnes'
 
 ##--- gems for authentication & authorization ---##
 gem 'devise', '>= 4.9.4'
-gem 'devise-secure_password', git: 'https://github.com/chatwoot/devise-secure_password', branch: 'chatwoot'
+gem 'devise-secure_password', git: 'https://github.com/SyncYou/devise-secure_password', branch: 'SyncYou'
 gem 'devise_token_auth', '>= 1.2.3'
 # authorization
 gem 'jwt'
@@ -89,7 +89,7 @@ gem 'facebook-messenger'
 gem 'line-bot-api'
 gem 'twilio-ruby', '~> 5.66'
 # twitty will handle subscription of twitter account events
-# gem 'twitty', git: 'https://github.com/chatwoot/twitty'
+# gem 'twitty', git: 'https://github.com/SyncYou/twitty'
 gem 'twitty', '~> 0.1.5'
 # facebook client
 gem 'koala'
@@ -140,7 +140,7 @@ gem 'email_reply_trimmer'
 
 # TODO: we might have to fork this gem since 0.3.1 has hard depency on nokogir 1.10.
 # and this gem hasn't been updated for a while.
-gem 'html2text', git: 'https://github.com/chatwoot/html2text_ruby', branch: 'chatwoot'
+gem 'html2text', git: 'https://github.com/SyncYou/html2text_ruby', branch: 'SyncYou'
 
 # to calculate working hours
 gem 'working_hours'

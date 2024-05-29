@@ -6,7 +6,7 @@
     :class="{ 'app-rtl--wrapper': isRTLView }"
     :dir="isRTLView ? 'rtl' : 'ltr'"
   >
-    <update-banner :latest-chatwoot-version="latestChatwootVersion" />
+    <update-banner :latest-SyncYou-version="latestSyncYouVersion" />
     <template v-if="currentAccountId">
       <pending-email-verification-banner v-if="hideOnOnboardingView" />
       <payment-pending-banner v-if="hideOnOnboardingView" />
@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       showAddAccountModal: false,
-      latestChatwootVersion: null,
+      latestSyncYouVersion: null,
     };
   },
 
@@ -100,7 +100,7 @@ export default {
   mounted() {
     this.initializeColorTheme();
     this.listenToThemeChanges();
-    this.setLocale(window.chatwootConfig.selectedLocale);
+    this.setLocale(window.SyncYouConfig.selectedLocale);
   },
   methods: {
     initializeColorTheme() {
@@ -118,12 +118,12 @@ export default {
       this.$store.dispatch('setActiveAccount', {
         accountId: this.currentAccountId,
       });
-      const { locale, latest_chatwoot_version: latestChatwootVersion } =
+      const { locale, latest_SyncYou_version: latestSyncYouVersion } =
         this.getAccount(this.currentAccountId);
       const { pubsub_token: pubsubToken } = this.currentUser || {};
       this.setLocale(locale);
       this.updateRTLDirectionView(locale);
-      this.latestChatwootVersion = latestChatwootVersion;
+      this.latestSyncYouVersion = latestSyncYouVersion;
       vueActionCable.init(pubsubToken);
 
       verifyServiceWorkerExistence(registration =>

@@ -41,7 +41,7 @@ class Enterprise::MessageTemplates::ResponseBotService
     end
   rescue StandardError => e
     process_action('handoff') # something went wrong, pass to agent
-    ChatwootExceptionTracker.new(e, account: conversation.account).capture_exception
+    SyncYouExceptionTracker.new(e, account: conversation.account).capture_exception
     true
   end
 

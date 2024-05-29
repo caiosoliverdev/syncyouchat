@@ -125,7 +125,7 @@
 <script>
 import MultiselectDropdown from 'shared/components/ui/MultiselectDropdown.vue';
 import { mapGetters } from 'vuex';
-import { debounce } from '@chatwoot/utils';
+import { debounce } from '@SyncYou/utils';
 import { isEmptyObject } from 'dashboard/helper/commons.js';
 export default {
   components: {

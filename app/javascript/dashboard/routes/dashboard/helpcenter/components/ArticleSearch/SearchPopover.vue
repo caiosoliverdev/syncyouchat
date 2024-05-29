@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { debounce } from '@chatwoot/utils';
+import { debounce } from '@SyncYou/utils';
 import keyboardEventListenerMixins from 'shared/mixins/keyboardEventListenerMixins';
 
 import SearchHeader from './Header.vue';

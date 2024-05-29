@@ -22,7 +22,7 @@ class Instagram::SendOnInstagramService < Base::SendOnChannelService
 
     send_to_facebook_page message_params if message.content.present?
   rescue StandardError => e
-    ChatwootExceptionTracker.new(e, account: message.account, user: message.sender).capture_exception
+    SyncYouExceptionTracker.new(e, account: message.account, user: message.sender).capture_exception
     # TODO : handle specific errors or else page will get disconnected
     # channel.authorization_error!
   end

@@ -6,14 +6,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  isOnChatwootCloud: {
+  isOnSyncYouCloud: {
     type: Boolean,
     default: false,
   },
 });
 
 const emit = defineEmits(['click']);
-const i18nKey = props.isOnChatwootCloud ? 'PAYWALL' : 'ENTERPRISE_PAYWALL';
+const i18nKey = props.isOnSyncYouCloud ? 'PAYWALL' : 'ENTERPRISE_PAYWALL';
 </script>
 
 <template>
@@ -41,11 +41,11 @@ const i18nKey = props.isOnChatwootCloud ? 'PAYWALL' : 'ENTERPRISE_PAYWALL';
       />
       <p class="text-sm font-normal">
         {{ $t(`SLA.${i18nKey}.UPGRADE_PROMPT`) }}
-        <span v-if="!isOnChatwootCloud && !isSuperAdmin">
+        <span v-if="!isOnSyncYouCloud && !isSuperAdmin">
           {{ $t('SLA.ENTERPRISE_PAYWALL.ASK_ADMIN') }}
         </span>
       </p>
-      <template v-if="isOnChatwootCloud || true">
+      <template v-if="isOnSyncYouCloud || true">
         <woot-button
           color-scheme="primary"
           class="w-full mt-2 text-center rounded-xl"

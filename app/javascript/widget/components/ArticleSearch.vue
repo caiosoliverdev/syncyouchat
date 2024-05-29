@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { debounce } from '@chatwoot/utils';
+import { debounce } from '@SyncYou/utils';
 export default {
   props: {
     placeholder: {

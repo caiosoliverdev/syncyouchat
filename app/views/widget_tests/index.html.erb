@@ -12,7 +12,7 @@
 %>
 <script>
 
-window.chatwootSettings = {
+window.SyncYouSettings = {
   hideMessageBubble: false,
   // baseDomain: '.loca.lt',
   position: '<%= @widget_position %>',
@@ -32,17 +32,17 @@ window.chatwootSettings = {
   g.async = true;
   s.parentNode.insertBefore(g,s);
   g.onload=function(){
-    window.chatwootSDK.run({
+    window.SyncYouSDK.run({
       websiteToken: '<%= @web_widget.website_token %>',
       baseUrl: BASE_URL
     })
   }
 })(document,"script");
 
-window.addEventListener('chatwoot:ready', function() {
-  console.log('chatwoot:ready', window.$chatwoot);
+window.addEventListener('SyncYou:ready', function() {
+  console.log('SyncYou:ready', window.$SyncYou);
   if (window.location.search.includes('setUser')) {
-    window.$chatwoot.setUser('<%= user_id %>', {
+    window.$SyncYou.setUser('<%= user_id %>', {
       identifier_hash: '<%= user_hash %>',
       email: 'jane@example.com',
       name: 'Jane Doe',
@@ -51,17 +51,17 @@ window.addEventListener('chatwoot:ready', function() {
   }
 })
 
-window.addEventListener('chatwoot:error', function(e) {
-  console.log('chatwoot:error', e.detail)
+window.addEventListener('SyncYou:error', function(e) {
+  console.log('SyncYou:error', e.detail)
 })
 
 
-window.addEventListener('chatwoot:on-message', function(e) {
-  console.log('chatwoot:on-message', e.detail)
+window.addEventListener('SyncYou:on-message', function(e) {
+  console.log('SyncYou:on-message', e.detail)
 })
 
 
-window.addEventListener('chatwoot:on-start-conversation', function(e) {
-  console.log('chatwoot:on-start-conversation', e.detail)
+window.addEventListener('SyncYou:on-start-conversation', function(e) {
+  console.log('SyncYou:on-start-conversation', e.detail)
 })
 </script>

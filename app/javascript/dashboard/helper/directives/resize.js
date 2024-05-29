@@ -1,4 +1,4 @@
-import { debounce } from '@chatwoot/utils';
+import { debounce } from '@SyncYou/utils';
 
 const RESIZE_OBSERVER_DEBOUNCE_TIME = 100;
 

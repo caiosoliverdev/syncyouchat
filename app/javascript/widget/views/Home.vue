@@ -74,7 +74,7 @@ export default {
       return this.$i18n.locale || 'en';
     },
     portal() {
-      return window.chatwootWebChannel.portal;
+      return window.SyncYouWebChannel.portal;
     },
     showArticles() {
       return (
@@ -128,7 +128,7 @@ export default {
       const locale = this.defaultLocale;
       const {
         portal: { slug },
-      } = window.chatwootWebChannel;
+      } = window.SyncYouWebChannel;
       this.openArticleInArticleViewer(`/hc/${slug}/${locale}`);
     },
   },

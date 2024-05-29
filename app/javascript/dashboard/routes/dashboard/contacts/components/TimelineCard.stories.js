@@ -12,7 +12,7 @@ export default {
       },
     },
     eventPath: {
-      defaultValue: 'chatwoot/chatwoot',
+      defaultValue: 'SyncYou/SyncYou',
       control: {
         type: 'text',
       },

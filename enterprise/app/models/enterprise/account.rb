@@ -7,7 +7,7 @@ module Enterprise::Account
   end
 
   def subscribed_features
-    plan_features = InstallationConfig.find_by(name: 'CHATWOOT_CLOUD_PLAN_FEATURES')&.value
+    plan_features = InstallationConfig.find_by(name: 'SyncYou_CLOUD_PLAN_FEATURES')&.value
     return [] if plan_features.blank?
 
     plan_features[plan_name]
@@ -30,7 +30,7 @@ module Enterprise::Account
 
     return GlobalConfig.get(config_name)[config_name] if GlobalConfig.get(config_name)[config_name].present?
 
-    ChatwootApp.max_limit
+    SyncYouApp.max_limit
   end
 
   def validate_limit_keys

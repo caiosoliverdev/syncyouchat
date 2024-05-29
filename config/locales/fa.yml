@@ -208,7 +208,7 @@ fa:
       description: "با افزودن Google Translate یکپارچه سازی، ترجمه پیام ها را برای اپراتور آسان تر کنید. Google translate به شناسایی خودکار زبان و تبدیل آن به زبان انتخاب شده توسط اپراتور/مدیر حساب کمک می کند."
     openai:
       name: "OpenAI"
-      description: "با استفاده از مدل‌های GPT از OpenAI، ویژگی‌های قدرتمند هوش مصنوعی را در Chatwoot اضافه کنید."
+      description: "با استفاده از مدل‌های GPT از OpenAI، ویژگی‌های قدرتمند هوش مصنوعی را در SyncYou اضافه کنید."
   public_portal:
     search:
       search_placeholder: جستجوی مقاله براساس عنوان یا متن...

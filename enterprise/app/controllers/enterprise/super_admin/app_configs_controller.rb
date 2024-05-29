@@ -2,7 +2,7 @@ module Enterprise::SuperAdmin::AppConfigsController
   private
 
   def allowed_configs
-    return super if ChatwootHub.pricing_plan == 'community'
+    return super if SyncYouHub.pricing_plan == 'community'
 
     case @config
     when 'custom_branding'
@@ -30,6 +30,6 @@ module Enterprise::SuperAdmin::AppConfigsController
   end
 
   def internal_config_options
-    %w[CHATWOOT_INBOX_TOKEN CHATWOOT_INBOX_HMAC_KEY ANALYTICS_TOKEN CLEARBIT_API_KEY DASHBOARD_SCRIPTS]
+    %w[SyncYou_INBOX_TOKEN SyncYou_INBOX_HMAC_KEY ANALYTICS_TOKEN CLEARBIT_API_KEY DASHBOARD_SCRIPTS]
   end
 end

@@ -69,7 +69,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { convertSecondsToTimeUnit } from '@chatwoot/utils';
+import { convertSecondsToTimeUnit } from '@SyncYou/utils';
 import validationMixin from './validationMixin';
 import validations from './validations';
 import SlaTimeInput from './SlaTimeInput.vue';

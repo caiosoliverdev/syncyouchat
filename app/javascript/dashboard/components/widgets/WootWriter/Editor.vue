@@ -53,11 +53,11 @@ import {
   MessageMarkdownSerializer,
   EditorState,
   Selection,
-} from '@chatwoot/prosemirror-schema';
+} from '@SyncYou/prosemirror-schema';
 import {
   suggestionsPlugin,
   triggerCharacters,
-} from '@chatwoot/prosemirror-schema/src/mentions/plugin';
+} from '@SyncYou/prosemirror-schema/src/mentions/plugin';
 import { BUS_EVENTS } from 'shared/constants/busEvents';
 
 import TagAgents from '../conversation/TagAgents.vue';
@@ -85,7 +85,7 @@ import { isEditorHotKeyEnabled } from 'dashboard/mixins/uiSettings';
 import {
   replaceVariablesInMessage,
   createTypingIndicator,
-} from '@chatwoot/utils';
+} from '@SyncYou/utils';
 import { CONVERSATION_EVENTS } from '../../../helper/AnalyticsHelper/events';
 import { checkFileSizeLimit } from 'shared/helpers/FileHelper';
 import { uploadFile } from 'dashboard/helper/uploadHelper';
@@ -711,7 +711,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@chatwoot/prosemirror-schema/src/styles/base.scss';
+@import '~@SyncYou/prosemirror-schema/src/styles/base.scss';
 
 .ProseMirror-menubar-wrapper {
   @apply flex flex-col;

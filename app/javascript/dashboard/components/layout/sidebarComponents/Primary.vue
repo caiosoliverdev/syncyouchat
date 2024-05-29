@@ -97,7 +97,7 @@ export default {
       this.$emit('toggle-accounts');
     },
     toggleSupportChatWindow() {
-      window.$chatwoot.toggle();
+      window.$SyncYou.toggle();
     },
     openNotificationPanel() {
       this.$track(ACCOUNT_EVENTS.OPENED_NOTIFICATIONS);

@@ -4,10 +4,10 @@ import { isTimeAfter } from 'shared/helpers/DateHelper';
 export default {
   computed: {
     channelConfig() {
-      return window.chatwootWebChannel;
+      return window.SyncYouWebChannel;
     },
     replyTime() {
-      return window.chatwootWebChannel.replyTime;
+      return window.SyncYouWebChannel.replyTime;
     },
     replyTimeStatus() {
       switch (this.replyTime) {

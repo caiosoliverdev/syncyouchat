@@ -176,12 +176,12 @@ import {
   getMessageVariables,
   getUndefinedVariablesInMessage,
   replaceVariablesInMessage,
-} from '@chatwoot/utils';
+} from '@SyncYou/utils';
 import WhatsappTemplates from './WhatsappTemplates/Modal.vue';
 import { MESSAGE_MAX_LENGTH } from 'shared/helpers/MessageTypeHelper';
 import inboxMixin, { INBOX_FEATURES } from 'shared/mixins/inboxMixin';
 import uiSettingsMixin from 'dashboard/mixins/uiSettings';
-import { trimContent, debounce } from '@chatwoot/utils';
+import { trimContent, debounce } from '@SyncYou/utils';
 import wootConstants from 'dashboard/constants/globals';
 import { isEditorHotKeyEnabled } from 'dashboard/mixins/uiSettings';
 import { CONVERSATION_EVENTS } from '../../../helper/AnalyticsHelper/events';

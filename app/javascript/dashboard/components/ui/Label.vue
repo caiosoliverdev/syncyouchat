@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import { getContrastingTextColor } from '@chatwoot/utils';
+import { getContrastingTextColor } from '@SyncYou/utils';
 
 export default {
   props: {

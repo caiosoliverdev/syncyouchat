@@ -78,7 +78,7 @@ export default {
     window.onmessage = e => {
       if (
         typeof e.data !== 'string' ||
-        e.data !== 'chatwoot-dashboard-app:fetch-info'
+        e.data !== 'SyncYou-dashboard-app:fetch-info'
       ) {
         return;
       }

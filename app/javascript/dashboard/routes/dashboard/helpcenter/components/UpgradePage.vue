@@ -13,14 +13,14 @@
           class="max-w-2xl text-base font-normal leading-6 text-left sm:text-center text-slate-700 dark:text-slate-200"
         >
           {{
-            isOnChatwootCloud
+            isOnSyncYouCloud
               ? $t('HELP_CENTER.UPGRADE_PAGE.DESCRIPTION')
               : $t('HELP_CENTER.UPGRADE_PAGE.SELF_HOSTED_DESCRIPTION')
           }}
         </p>
       </div>
       <div
-        v-if="isOnChatwootCloud"
+        v-if="isOnSyncYouCloud"
         class="flex flex-row gap-3 justify-start items-center sm:justify-center"
       >
         <woot-button
@@ -117,7 +117,7 @@ export default {
   computed: {
     ...mapGetters({
       accountId: 'getCurrentAccountId',
-      isOnChatwootCloud: 'globalConfig/isOnChatwootCloud', // Pending change text
+      isOnSyncYouCloud: 'globalConfig/isOnSyncYouCloud', // Pending change text
     }),
   },
   methods: {

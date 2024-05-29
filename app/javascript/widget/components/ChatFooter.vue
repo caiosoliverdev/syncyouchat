@@ -42,7 +42,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import { getContrastingTextColor } from '@chatwoot/utils';
+import { getContrastingTextColor } from '@SyncYou/utils';
 import CustomButton from 'shared/components/Button.vue';
 import FooterReplyTo from 'widget/components/FooterReplyTo.vue';
 import ChatInputWrap from 'widget/components/ChatInputWrap.vue';
@@ -50,7 +50,7 @@ import { BUS_EVENTS } from 'shared/constants/busEvents';
 import { sendEmailTranscript } from 'widget/api/conversation';
 import routerMixin from 'widget/mixins/routerMixin';
 import { IFrameHelper } from '../helpers/utils';
-import { CHATWOOT_ON_START_CONVERSATION } from '../constants/sdkEvents';
+import { SyncYou_ON_START_CONVERSATION } from '../constants/sdkEvents';
 
 export default {
   components: {
@@ -82,7 +82,7 @@ export default {
       return getContrastingTextColor(this.widgetColor);
     },
     hideReplyBox() {
-      const { allowMessagesAfterResolved } = window.chatwootWebChannel;
+      const { allowMessagesAfterResolved } = window.SyncYouWebChannel;
       const { status } = this.conversationAttributes;
       return !allowMessagesAfterResolved && status === 'resolved';
     },
@@ -136,7 +136,7 @@ export default {
       this.replaceRoute('prechat-form');
       IFrameHelper.sendMessage({
         event: 'onEvent',
-        eventIdentifier: CHATWOOT_ON_START_CONVERSATION,
+        eventIdentifier: SyncYou_ON_START_CONVERSATION,
         data: { hasConversation: true },
       });
     },

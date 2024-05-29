@@ -16,7 +16,7 @@ class Microsoft::CallbacksController < ApplicationController
       redirect_to app_microsoft_inbox_agents_url(account_id: account.id, inbox_id: inbox.id)
     end
   rescue StandardError => e
-    ChatwootExceptionTracker.new(e).capture_exception
+    SyncYouExceptionTracker.new(e).capture_exception
     redirect_to '/'
   end
 
